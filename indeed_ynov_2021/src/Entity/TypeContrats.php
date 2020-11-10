@@ -20,7 +20,7 @@ class TypeContrats
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type;
+    private $Type;
 
     public function getId(): ?int
     {
@@ -29,12 +29,12 @@ class TypeContrats
 
     public function getType(): ?string
     {
-        return $this->type;
+        return $this->Type;
     }
 
-    public function setType(string $type): self
+    public function setType(string $Type): self
     {
-        $this->type = $type;
+        $this->Type = $Type;
 
         return $this;
     }

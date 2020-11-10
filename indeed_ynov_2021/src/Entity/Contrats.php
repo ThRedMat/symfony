@@ -20,7 +20,7 @@ class Contrats
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $contrats;
+    private $Contrats;
 
     public function getId(): ?int
     {
@@ -29,12 +29,12 @@ class Contrats
 
     public function getContrats(): ?string
     {
-        return $this->contrats;
+        return $this->Contrats;
     }
 
-    public function setContrats(string $contrats): self
+    public function setContrats(string $Contrats): self
     {
-        $this->contrats = $contrats;
+        $this->Contrats = $Contrats;
 
         return $this;
     }

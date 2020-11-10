@@ -20,22 +20,54 @@ class Offres
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $Title;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $Description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     */
+    private $Adresse;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $CodePostal;
+
+    /**
+     * @ORM\Column(type="string", length=5)
      */
     private $Ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
-    private $Type;
+    private $CreatedAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
-    private $Duration;
+    private $UpdatedAt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $MissionEnd;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Contrats::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Contrat;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeContrats::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $TypeContrat;
 
     public function getId(): ?int
     {
@@ -44,12 +76,48 @@ class Offres
 
     public function getTitle(): ?string
     {
-        return $this->title;
+        return $this->Title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(string $Title): self
     {
-        $this->title = $title;
+        $this->Title = $Title;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->Adresse;
+    }
+
+    public function setAdresse(string $Adresse): self
+    {
+        $this->Adresse = $Adresse;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?string
+    {
+        return $this->CodePostal;
+    }
+
+    public function setCodePostal(string $CodePostal): self
+    {
+        $this->CodePostal = $CodePostal;
 
         return $this;
     }
@@ -66,26 +134,62 @@ class Offres
         return $this;
     }
 
-    public function getType(): ?string
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->Type;
+        return $this->CreatedAt;
     }
 
-    public function setType(string $Type): self
+    public function setCreatedAt(\DateTimeInterface $CreatedAt): self
     {
-        $this->Type = $Type;
+        $this->CreatedAt = $CreatedAt;
 
         return $this;
     }
 
-    public function getDuration(): ?string
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->Duration;
+        return $this->UpdatedAt;
     }
 
-    public function setDuration(string $Duration): self
+    public function setUpdatedAt(\DateTimeInterface $UpdatedAt): self
     {
-        $this->Duration = $Duration;
+        $this->UpdatedAt = $UpdatedAt;
+
+        return $this;
+    }
+
+    public function getMissionEnd(): ?\DateTimeInterface
+    {
+        return $this->MissionEnd;
+    }
+
+    public function setMissionEnd(?\DateTimeInterface $MissionEnd): self
+    {
+        $this->MissionEnd = $MissionEnd;
+
+        return $this;
+    }
+
+    public function getContrat(): ?Contrats
+    {
+        return $this->Contrat;
+    }
+
+    public function setContrat(?Contrats $Contrat): self
+    {
+        $this->Contrat = $Contrat;
+
+        return $this;
+    }
+
+    public function getTypeContrat(): ?TypeContrats
+    {
+        return $this->TypeContrat;
+    }
+
+    public function setTypeContrat(?TypeContrats $TypeContrat): self
+    {
+        $this->TypeContrat = $TypeContrat;
 
         return $this;
     }
