@@ -33,12 +33,12 @@ class Offres
     private $Adresse;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=5)
      */
     private $CodePostal;
 
     /**
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=255)
      */
     private $Ville;
 

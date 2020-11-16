@@ -25,11 +25,11 @@ class OffresFixture extends Fixture
         $cdi->setContrats("CDI");
         $manager->persist($cdi);
 
-        // Type Contrats
         $freelance = new Contrats();
         $freelance->setContrats("FREELANCE");
         $manager->persist($freelance);
 
+        // Type Contrats
         $temps_plein = new TypeContrats();
         $temps_plein->setType("Temps Plein");
         $manager->persist($temps_plein);
