@@ -16,7 +16,7 @@ class OffresController extends AbstractController
      */
     public function index(OffresRepository $offresRepository, ContratsRepository $contratsRepository, TypeContratsRepository $typeContratsRepository): Response
     {
-        $offres = $offresRepository->findAll();
+        $offres = $offresRepository->FindAll();
         $contrats = $contratsRepository->FindAll();
         $typeContrats = $typeContratsRepository->FindAll();
 

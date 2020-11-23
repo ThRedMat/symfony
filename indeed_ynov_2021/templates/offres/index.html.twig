@@ -4,6 +4,13 @@
 {% endblock %}
 
 {% block body %}
+	<div id="addOffre" class="text-center m-4">
+		<a href="/new">
+			<button type="button" class="btn btn-primary">
+				Ajouter une offre
+			</button>
+		</a>
+	</div>
 	<div id="cards" class="container-fluid">
 		<div class="row row-cols-4 justify-content-center">
 			{% for offre in offres %}

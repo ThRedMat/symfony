@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Indeed
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+	<div id="form" class="container-sm">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button type="submit" class="btn btn-primary">Ajouter l'offre!</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

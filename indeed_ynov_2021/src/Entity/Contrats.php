@@ -22,6 +22,11 @@ class Contrats
      */
     private $Contrats;
 
+    public function __toString(): string
+    {
+        return $this->getContrats();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
